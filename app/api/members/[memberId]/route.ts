@@ -10,6 +10,7 @@ export async function DELETE(
     const profile = await currentProfile();
     const { searchParams } = new URL(req.url);
     const serverId = searchParams.get("serverId");
+    console.log(serverId);
     if (!profile) {
       return new NextResponse("Unauthorzied", { status: 401 });
     }

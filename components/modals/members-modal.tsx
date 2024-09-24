@@ -61,7 +61,9 @@ export const MembersModal = () => {
           serverId: server?.id,
         },
       });
+
       const response = await axios.patch(url, { role });
+
       router.refresh();
       onOpen("members", { server: response.data });
     } catch (error) {
@@ -75,12 +77,13 @@ export const MembersModal = () => {
     try {
       setLoadingId(memberId);
       const url = qs.stringifyUrl({
-        url: `api/members/${memberId}`,
+        url: `/api/members/${memberId}`,
         query: {
           serverId: server?.id,
         },
       });
       const response = await axios.delete(url);
+
       router.refresh();
       onOpen("members", { server: response.data });
     } catch (error) {
@@ -137,7 +140,9 @@ export const MembersModal = () => {
                                 )}
                               </DropdownMenuItem>
                               <DropdownMenuItem
-                                onClick={() => onRoleChange(member.id, "GUEST")}
+                                onClick={() =>
+                                  onRoleChange(member.id, "MODERATOR")
+                                }
                               >
                                 <ShieldCheck className="h-4 w-4 mr-2" />
                                 Moderator{" "}
