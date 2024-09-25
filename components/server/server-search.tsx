@@ -10,7 +10,7 @@ import {
   CommandItem,
   CommandList,
 } from "../ui/command";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
 
 interface ServerSearchProps {
