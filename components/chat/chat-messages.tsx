@@ -21,7 +21,7 @@ interface ChatMessagesProps {
   paramValue: string;
   type: "channel" | "conversation";
 }
-const DATE_FORMAT = "d MMMM yyyy, HH:mm";
+const DATE_FORMAT = "dd/MM/yyyy, HH:mm aa";
 
 type MessageWithMemberWithProfile = Message & {
   member: Member & {
